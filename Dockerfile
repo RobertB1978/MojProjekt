@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 # Ustawienie katalogu roboczego w kontenerze
-WORKDIR /app
+WORKDIR /aplikacja
 
 # Kopiowanie plików aplikacji do katalogu roboczego
 COPY . .
