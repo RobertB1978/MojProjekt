@@ -1,4 +1,3 @@
-notepad Dockerfile
 # Wybór obrazu bazowego z Node.js
 FROM node:18-alpine
 
@@ -8,7 +7,7 @@ WORKDIR /app
 # Kopiowanie plików aplikacji do katalogu roboczego
 COPY . .
 
-# Instalacja zależności aplikacji Node.js
+# Instalacja zależności
 RUN npm install
 
 # Komenda startowa uruchamiająca aplikację
