@@ -1,11 +1,17 @@
 {
-  "name": "mojprojekt",
+  "name": "moj-projekt",
   "version": "1.0.0",
-  "main": "aplikacja.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "socket.io": "latest",
+    "socket.io-client": "latest",
+    "framer-motion": "latest"
   },
   "scripts": {
-   "start": "node app.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   }
 }
