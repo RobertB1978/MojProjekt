@@ -1,6 +1,8 @@
 {
   "name": "moj-projekt",
   "version": "1.0.0",
+  "description": "Nowy package.json",
+  "main": "app.js",
   "scripts": {
     "dev": "node app.js",
     "start": "node app.js",
