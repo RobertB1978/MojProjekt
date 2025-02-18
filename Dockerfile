@@ -4,7 +4,7 @@ FROM node:18-alpine
 # Ustawienie katalogu roboczego
 WORKDIR /app
 
-# Kopiowanie pliku package.json i package-lock.json
+# Kopiowanie plików package.json i package-lock.json
 COPY package*.json ./
 
 # Instalacja zależności
