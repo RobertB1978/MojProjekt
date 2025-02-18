@@ -1,13 +1,11 @@
 const express = require('express');
 const app = express();
+const PORT = 3000;
 
 app.get('/', (req, res) => {
-    res.send('Serwer działa poprawnie!');
+    res.send('Serwer działa!');
 });
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Serwer działa na porcie ${PORT}`);
-}).on('error', (err) => {
-    console.error('Błąd serwera:', err);
+    console.log(`Serwer działa na http://localhost:${PORT}`);
 });
