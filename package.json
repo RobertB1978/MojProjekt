@@ -2,10 +2,11 @@
   "name": "moj-projekt",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node app.js",
-    "start": "node app.js",
-    "build": "next build",
-    "test": "echo 'Error: no test specified' && exit 1"
+  "dev": "node app.js",
+  "start": "node app.js",
+  "build": "next build"
+}
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "express": "^4.21.2",
