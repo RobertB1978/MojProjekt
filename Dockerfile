@@ -1,16 +1,20 @@
-FROM node:18-alpine
+# Pobranie obrazu Node.js
+FROM node:18
 
-# Ustawienie katalogu roboczego
-WORKDIR /aplikacja
+# Ustawienie katalogu roboczego w kontenerze
+WORKDIR /app
 
-# Kopiowanie plików
-COPY . .
+# Kopiowanie plików package.json i package-lock.json
+COPY package*.json ./
 
 # Instalacja zależności
 RUN npm install
 
-# Uruchamianie aplikacji
-CMD ["npm", "start"]
+# Kopiowanie pozostałych plików aplikacji do kontenera
+COPY . .
 
-# Otworzenie portu 3000
-EXPOSE 3000
+# Budowanie aplikacji Next.js
+RUN npm run build
+
+# Uruchomienie aplikacji w trybie produkcyjnym
+CMD ["npm", "run", "start"]
