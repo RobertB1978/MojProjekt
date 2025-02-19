@@ -4,7 +4,7 @@
   "description": "Nowy package.json",
   "main": "app.js",
   "scripts": {
-    "preinstall": "rm -rf node_modules package-lock.json",
+    "preinstall": "Remove-Item -Recurse -Force node_modules, package-lock.json",
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
