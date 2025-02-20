@@ -1,0 +1,26 @@
+const express = require("express");
+const next = require("next");
+const http = require("http");
+const socketIo = require("socket.io");
+
+const dev = process.env.NODE_ENV !== "production";
+const app = next({ dev });
+const handle = app.getRequestHandler();
+
+const server = express();
+const httpServer = http.createServer(server);
+const io = socketIo(httpServer);
+
+io.on("connection", (socket) => {
+  console.log("🟢 Nowy użytkownik podłączony!");
+  socket.on("disconnect", () => console.log("🔴 Użytkownik rozłączony"));
+});
+
+server.all("*", (req, res) => {
+  return handle(req, res);
+});
+
+const PORT = process.env.PORT || 3000;
+httpServer.listen(PORT, () => {
+  console.log(`🚀 Serwer działa na porcie ${PORT}`);
+});
