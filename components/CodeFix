@@ -1,0 +1,17 @@
+"use client";
+
+import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useChat } from "ai/react";
+import { saveAs } from "file-saver";
+
+export const CodeFixer = () => {
+  const [inputCode, setInputCode] = useState("");
+  const [fixedCode, setFixedCode] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { messages, append } = useChat({
+    api: "/api/fix-code",
+    onFinish: (message) => {
+      setFixedCode
+
